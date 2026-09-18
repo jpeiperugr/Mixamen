@@ -4,4 +4,6 @@ Prácticamente todo profesor, sin importar la etapa académica en la imparte cla
 
 Con el fin de ofrecer una solución fácil e intuitiva a estos problemas nace **Mixamen**, donde se podrá guardar y clasificar cada uno de los ejercicios subidos por el profesor para poder así acceder a ellos de manera fácil y a su vez para generar examenes a su gusto.
 
-![Fotografía de la tarjeta de rol](imagen.jpg)
+![Fotografía de la tarjeta de rol](tarjeta_cliente.jpg)
+
+* [Documentación de configuración adicional](doc/configuracion.md)
