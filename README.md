@@ -26,13 +26,14 @@ Un profesor prepara cosas en su portátil personal en casa, pero luego usa el or
 
 ## Estado actual del proyecto
 
-Actualmente, el proyecto se encuentra en el Objetivo 1. Se ha dividido el trabajo en **Milestones**:
+Se ha dividido el trabajo en [Milestones](doc/milestones.md):
 
-1. Estructuras de datos base.
-2. Extractor de documentos.
-3. Cruce y asignación de criterios.
+1. Estructura base del problema.
+2. Extractor y procesador de ejercicios.
 
-Las necesidades de los usuarios se encuentran en las **HUs**, las cuales están como issues con la label **user-stories**. El contexto del usuario (**user journey**) se encuentra en la carpeta de documentación del proyecto.
+Actualmente, el proyecto se encuentra en la ejecución del milestone 0. 
+
+Las necesidades de los usuarios se encuentran en las [HUs](doc/historias_usuario.md), las cuales están como issues con la label **user-stories**. El contexto del usuario se encuentra en las [user journey](doc/user_journey.md) y de las [personas reales](doc/personas.md).
 
 
 ## Fotografía de las tarjetas de rol
