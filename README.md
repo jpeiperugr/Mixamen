@@ -43,4 +43,8 @@ Las necesidades de los usuarios se encuentran en las [HUs](doc/historias_usuario
 ## Enlaces
 * [Documentación adicional y de configuración del objetivo 0](doc/objetivo0.md)
 * [User Journey](doc/user_journey.md)
-* [Hay documentos útiles en el apartado "Releases", v.0.1.1-datos-prueba](https://github.com/jpeiperugr/Mixamen/releases/tag/documentacion-util)
+* [Personas](docs/personas.md)
+* [Glosario](docs/glosario.md)
+* [Historias de Usuario](docs/historias_de_usuario.md)
+* [Milestones](docs/milestones.md)
+* [Hay documentos útiles en el apartado "Releases"](https://github.com/jpeiperugr/Mixamen/releases/tag/documentacion-util)
