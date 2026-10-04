@@ -10,6 +10,6 @@ Asignada al [Milestone 0](doc/milestones.md).
 
 ## [HU2] El bloqueo del material antiguo
 
-Los profesores tienen muchos ejercicios en documentos antiguos (PDFs, LaTeX). El problema es que estos documentos son bloques de texto estáticos y carecen de metadatos o etiquetas modernas, lo que impide reutilizarlos de forma ágil sin tener que leerlos y catalogarlos de nuevo uno a uno.
+Los profesores tienen muchos ejercicios en documentos antiguos (PDFs, LaTeX). El problema es que estos documentos son bloques de texto estáticos. Esto hace muy complicado el poder separar, aislar y reutilizar problemas individuales para crear nuevos exámentes, obligándoles a transcribir a mano cada pregunta que quieren reciclar.
 
 Asignada al [Milestone 1](doc/milestones.md).
