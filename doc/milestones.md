@@ -8,10 +8,9 @@
 
 - Los issues se asignan a la [HU001](doc/historias_usuario.md) y son problemas y no tareas.
 - Nada de lógica de negocio, no es el objetivo de este PMV.
-- Documentación breve sobre las decisiones tomadas.
 
 ## Milestone 1: Extractor y procesador de ejercicios
 
-1. Producto interno (PMV 1). Se entregará una librería de funciones que se apoya en las clases del hito anterior. Este paquete de código debe resolver el problema descrito en la [HU002](doc/historias_usuario.md) donde se tienen los apuntes de los profesores y se necesita extraer la información útil.
+1. Producto interno (PMV 1). Se entregará una librería de funciones que se apoya en las clases del hito anterior. Este paquete de código debe resolver el problema descrito en la [HU002](doc/historias_usuario.md) donde se tienen los apuntes de los profesores y se devuelven los objetos de nuestro dominio ya construidos y listos.
 
 2. Se considerará válido cuando este código supere una serie de tests automáticos, demostrando que es capaz de procesar el texto y aplicar la lógica correctamente sin romperse.
