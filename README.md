@@ -14,7 +14,7 @@ Este problema viene de una charla que tuve con mi tía que es profesora. Ella ll
 
 Los datos provienen de dos fuentes reales y semiestructuradas:
 1. **Los exámenes antiguos:** Archivos PDF o Latex que contienen el texto de los ejercicios de años pasados.
-2. **Los criterios de evaluación:** Documentos PDF que contienen el temario estructurado oficial vigente. Principales enlaces: https://www.juntadeandalucia.es/boja/2023/104/39?utm_source=gemini, https://www.juntadeandalucia.es/boja/2023/90/?utm_source=gemini.
+2. **Los criterios de evaluación:** Documentos PDF que contienen el temario estructurado oficial vigente. Principales enlaces: https://educagob.educacionfpydeportes.gob.es/curriculo/curriculo-lomloe/menu-curriculos-basicos/ed-secundaria-obligatoria/materias/matematicas/criterios-evaluacion-primer-tercer-curso.html .
 
 ## ¿Por qué requiere una lógica de negocio y no solo almacenamiento?
 
@@ -24,10 +24,27 @@ El sistema tiene que coger el texto de un ejercicio de matemáticas, analizar la
 
 Un profesor prepara cosas en su portátil personal en casa, pero luego usa el ordenador del departamento en el instituto. Los ordenadores de los centros públicos suelen estar muy restringidos y no te dejan instalar bases de datos ni programas propios. Al estar en la nube, el profesor solo necesita abrir el navegador en cualquier ordenador para analizar sus ejercicios.
 
+## Estado actual del proyecto
+
+Se ha dividido el trabajo en [Milestones](doc/milestones.md):
+
+1. Estructura base del problema.
+2. Extractor y procesador de ejercicios.
+
+Actualmente, el proyecto se encuentra en la ejecución del milestone 0. 
+
+Las necesidades de los usuarios se encuentran en las [HUs](doc/historias_usuario.md), las cuales están como issues con la label **user-stories**. El contexto del usuario se encuentra en las [user journey](doc/user_journey.md) y de las [personas reales](doc/personas.md).
+
 
 ## Fotografía de las tarjetas de rol
 
 ![Fotografía de la tarjeta de rol](media/tarjetas_rol.jpg)
 
 ## Enlaces
-* [Documentación adicional y de configuración](doc/objetivo0.md)
+* [Documentación adicional y de configuración del objetivo 0](doc/objetivo0.md)
+* [User Journey](doc/user_journey.md)
+* [Personas](doc/personas.md)
+* [Glosario](doc/glosario.md)
+* [Historias de Usuario](doc/historias_de_usuario.md)
+* [Milestones](doc/milestones.md)
+* [Hay documentos útiles en el apartado "Releases"](https://github.com/jpeiperugr/Mixamen/releases/tag/documentacion-util)
