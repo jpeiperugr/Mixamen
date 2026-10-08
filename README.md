@@ -14,7 +14,7 @@ Este problema viene de una charla que tuve con mi tía que es profesora. Ella ll
 
 Los datos provienen de dos fuentes reales y semiestructuradas:
 1. **Los exámenes antiguos:** Archivos PDF o Latex que contienen el texto de los ejercicios de años pasados.
-2. **Los criterios de evaluación:** Documentos PDF que contienen el temario estructurado oficial vigente. Principales enlaces: https://www.juntadeandalucia.es/boja/2023/104/39, https://www.juntadeandalucia.es/boja/2023/90.
+2. **Los criterios de evaluación:** Documentos PDF que contienen el temario estructurado oficial vigente. Principales enlaces: https://educagob.educacionfpydeportes.gob.es/curriculo/curriculo-lomloe/menu-curriculos-basicos/ed-secundaria-obligatoria/materias/matematicas/criterios-evaluacion-primer-tercer-curso.html .
 
 ## ¿Por qué requiere una lógica de negocio y no solo almacenamiento?
 
