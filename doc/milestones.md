@@ -1,13 +1,13 @@
 # Milestones
 
-## Milestone 0: Estructuras base del problema
+## Milestone 0: Modelo del dominio
 
-1. Producto interno (PMV 0). Se entregará un paquete de código que contenga el modelo del dominio. Este paquete es el resultado directo de aplicar la metodología de diseño para extraer los conceptos del usuario, permitiendo empezar a abordar su problema principal con la justificación y catalogación de ejercicios.
+1. Producto interno (PMV 0). Este milestone hace el modelado inicial trabajando con el problema de la [HU1](historias_usuario.md). Para analizarlo se usa la metodología DDD (Domain Driven Design).
 
-2. Se considerará válido comprobando que se ha seguido el proceso de la metodología elegida. Esto se verifica viendo que los issues del repositorio reflejan la toma de decisiones y el proceso de extracción de conocimiento, y no simples tareas de programación.
+2. Se considerará válido comprobando que se ha seguido el proceso de la metodología elegida. Esto se verifica viendo que los issues del repositorio reflejan que se ha realizado el proceso de extracción de conceptos y la toma de decisiones, garantizando que el modelo refleja la realidad del problema.
 
-## Milestone 1: Extractor y procesador de ejercicios
+## Milestone 1: Lógica de negocio
 
-1. Producto interno (PMV 1). Se entregará un incremento de código que implementa la lógica de negocio sobre el modelo del hito anterior. Este paquete avanza iterativamente en la resolución del problema de la usuaria al proporcionar la capacidad de operar con los conceptos que se extrajeron en el PMV 0.
+1. Producto interno (PMV 1). El producto a entregar es la lógica de negocio estructurada y desarrollada mediante una metodología guiada por pruebas automáticas. Este avance se apoyará en el modelo anterior para empezar a operar con la información de la usuaria.
 
-2. Se considerará válido cuando el código pase los tests automáticos que comprueben que el sistema es capaz de leer ese texto y aislar la información de los ejercicios sin fallar.
+2. Se considerará válido cuando el desarrollo pase los tests automáticos. Este proceso comprobará metodológicamente que la lógica aplicada es correcta y que no hay fallos.
