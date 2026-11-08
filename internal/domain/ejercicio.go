@@ -1,8 +1,8 @@
 package domain
 
 type Ejercicio struct { //Representa el problema matemático y actúa como la entidad principal del problema
-	id int
-	conceptos map[conceptoMatematico]struct{} //Se pone struct{} puesto que se necesita clave y valor, pero en este caso lo que es realmente importante es la clave, creando así es hashmap, lo mismo ocurre con los siguientes
+	enunciado string
+	conceptos map[conceptoMatematico]struct{}
 	criterios map[criterioEvaluacion]struct{}
 	saberes map[saberBasico]struct{}
 }
