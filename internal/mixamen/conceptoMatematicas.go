@@ -1,3 +1,3 @@
-   package mixamen
+package mixamen
 
-   type conceptoMatematicas string
+type conceptoMatematicas string
