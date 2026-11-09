@@ -1,4 +1,4 @@
-package domain
+package mixamen
 
 type conceptoMatematico string 
 
