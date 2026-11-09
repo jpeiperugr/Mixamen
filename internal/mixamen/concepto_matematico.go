@@ -1,3 +1,3 @@
 package mixamen
 
-type conceptoMatematicas string
+type conceptoMatematico string
