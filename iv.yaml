@@ -1,2 +1,2 @@
 lenguaje: go
-entidad: internal/domain/ejercicio.go
+entidad: internal/mixamen/ejercicioMatematico.go
