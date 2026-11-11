@@ -1,6 +1,6 @@
 package mixamen
 
-type EjercicioMatematico struct {
+type ejercicioMatematico struct {
 	enunciado string
 	conceptos map[conceptoMatematico]struct{}
 	criterios map[criterioEvaluacion]struct{}
