@@ -1,6 +1,6 @@
 package mixamen
 
-type saberBasico struct{
-	codigo string
+type saberBasico struct {
+	codigo      string
 	descripcion string
 }
