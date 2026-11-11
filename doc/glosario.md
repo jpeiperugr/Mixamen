@@ -7,3 +7,5 @@
 * **Ejercicio:** Es la unidad mínima de evaluación. En el contexto de este proyecto, representa el bloque de texto (el "enunciado") que el profesor necesita extraer de sus documentos antiguos para poder catalogarlo y reutilizarlo de forma individual bajo la nueva normativa.
 
 * **Examen:** Conjunto de ejercicios que la profesora prepara para evaluar al alumnado. Cada ejercicio que contiene debe quedar justificado con sus criterios de evaluación y saberes básicos
+
+* **Catálogo:** Conjunto de ejercicios ya justificados con sus criterios de evaluación y saberes básicos extraidos de la normativa oficial, del que la profesora elige los ejercicios para sus exámenes
