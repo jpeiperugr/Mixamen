@@ -5,3 +5,5 @@
 * **Criterio de Evaluación:** Es el código que se exige que aparezca junto a cada ejercicio y que indica el nivel de desempeño que se espera del alumnado. Por ejemplo, en matemáticas: 1.1 Interpretar problemas matemáticos de la vida cotidiana, organizando los datos dados, estableciendo las relaciones entre ellos y comprendiendo las preguntas formuladas.
 
 * **Ejercicio:** Es la unidad mínima de evaluación. En el contexto de este proyecto, representa el bloque de texto (el "enunciado") que el profesor necesita extraer de sus documentos antiguos para poder catalogarlo y reutilizarlo de forma individual bajo la nueva normativa.
+
+* **Examen:** Conjunto de ejercicios que la profesora prepara para evaluar al alumnado. Cada ejercicio que contiene debe quedar justificado con sus criterios de evaluación y saberes básicos
