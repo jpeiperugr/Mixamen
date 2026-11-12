@@ -1,5 +1,7 @@
 package mixamen
 
 type Catalogo struct {
-	ejercicios map[string]ejercicioMatematico
+	criterios map[criterioEvaluacion]struct{}
+	saberes map[saberBasico]struct{}
+	ejerciciosPorEnunciado map[string]ejercicioMatematico
 }
