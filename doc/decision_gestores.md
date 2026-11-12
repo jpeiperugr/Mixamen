@@ -28,3 +28,4 @@ He lanzado `time <herramienta> check` para medir el tiempo de compilación, para
 | **Ligereza de configuración** | 2 líneas | 5 líneas |
 
 
+*Decisión:* He elegido make porque como se aprecia en la captura, make ya viene preinstalado en el sistema mientras que task no, haciendo que para cualquier persona nueva que tuviera que trabajar en este proyecto ya tuviese instalado el gestor de tareas.

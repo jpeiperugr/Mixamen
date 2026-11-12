@@ -48,3 +48,5 @@ Las necesidades de los usuarios se encuentran en las [HUs](doc/historias_usuario
 * [Historias de Usuario](doc/historias_de_usuario.md)
 * [Milestones](doc/milestones.md)
 * [Hay documentos útiles en el apartado "Releases"](https://github.com/jpeiperugr/Mixamen/releases/tag/documentacion-util)
+
+Para comprobar la sintaxis de las entidades y objetos valor programados hasta ahora, ejecuta: make check.
