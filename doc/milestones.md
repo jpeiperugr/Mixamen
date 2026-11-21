@@ -10,4 +10,4 @@
 
 1. Producto interno (PMV 1). El producto a entregar es la lógica de negocio estructurada y desarrollada mediante una metodología guiada por pruebas automáticas. Este avance se apoyará en el modelo anterior para empezar a operar con la información de la usuaria.
 
-2. Se considerará válido cuando el desarrollo pase los tests automáticos. Este proceso comprobará metodológicamente que la lógica aplicada es correcta y que no hay fallos.
+2. Se considerará válido cuando el desarrollo pase los tests automáticos. Este proceso comprobará metodológicamente que la lógica aplicada es correcta y que no hay fallos. Además, se deberá disponer de herramientas que permitan automatizar tareas (como comprobar la sintaxis).
