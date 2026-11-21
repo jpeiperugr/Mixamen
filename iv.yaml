@@ -1,2 +1,5 @@
 lenguaje: go
 entidad: internal/mixamen/catalogo.go
+automatizar:
+  fichero: Makefile
+  orden: make
