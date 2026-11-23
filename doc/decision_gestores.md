@@ -61,4 +61,4 @@ A continuación, he lanzado `time <herramienta> check` con una tarea mínima que
 | **Tamaño herramienta** | 254 KB | 50 MB | 8.4 MB | 184 MB |
 | **Tamaño configuración** | 17 B | 43 B | 37 B | 30 B |
 
-*Decisión:* 
+*Decisión:* He elegido usar **Make** porque es la que mejor resultado obtiene en todo lo que ha sido evaluado.
