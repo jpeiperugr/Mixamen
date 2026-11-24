@@ -5,7 +5,7 @@ En Go, el gestor de dependencias estándar y nativo es `go mod`. Al ser el está
 Para elegir el gestor de tareas del proyecto he evaluamado cuatro alternativas: **Make** (estándar POSIX), **Task** (escrito en Go), **Xc** (herramienta emergente escrita en Go basada en Markdown) y **Mise** (herramienta escrita en Rust). Los criterios objetivos medidos son:
 
 - Tiempo de instalación usando el instalador binario oficial más rápido disponible.
-- Overhead de ejecución lanzando una tarea mínima idéntica con `echo ok`.
+- Tiempo de arranque y gestión (*overhead*) al lanzar una tarea mínima idéntica con `echo ok`, aislando el rendimiento de la herramienta del tiempo de compilación de Go.
 - Tamaño del binario instalado en disco.
 - Tamaño del fichero de configuración mínimo para definir la misma tarea.
 
