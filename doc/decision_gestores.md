@@ -2,10 +2,10 @@
 
 En Go, el gestor de dependencias estándar y nativo es `go mod`. Al ser el estándar oficial del lenguaje desde la versión 1.16, además no requiere instalación externa.
 
-Para elegir el gestor de tareas del proyecto he evaluamado cuatro alternativas: **Make** (estándar POSIX), **Tusk** (YAML escrito en Go), **Robo** (YAML escrito en Go) e **Invoke** (gestor de tareas en Python). Los criterios objetivos medidos son:
+Para elegir el gestor de tareas del proyecto he evaluado cuatro alternativas: **Make** (estándar POSIX), **Tusk** (YAML escrito en Go), **Robo** (YAML escrito en Go) e **Invoke** (gestor de tareas en Python). Los criterios objetivos medidos son:
 
 - Tiempo de instalación usando el instalador binario oficial más rápido disponible.
-- Tiempo de arranque y gestión (*overhead*) al lanzar la misma tarea `check` ejecutando `go build ./...` en la raíz del proyecto.
+- Tiempo de arranque y gestión al lanzar la misma tarea `check` ejecutando `go build ./...` en la raíz del proyecto.
 - Tamaño del binario instalado en disco.
 - Tamaño del fichero de configuración mínimo para definir la misma tarea.
 
@@ -26,9 +26,9 @@ A continuación, he lanzado `time <herramienta> check` ejecutando `go build ./..
 
 Resultados de las pruebas:
 
-* **Make:** viene preinstalado en el sistema (0s de instalación), su binario ocupa `254 KB`, el Makefile de `check` ocupa `22 bytes` y ejecuta la comprobación en 0.019s.
-* **Tusk:** tarda 5.582s en instalarse con `go install`, ocupa 7.9M, su fichero de configuración ocupa `44 bytes` y ejecuta `check` en 0.019s.
-* **Robo:** tarda 4.226s en instalarse con `go install`, ocupa 5.6M, su fichero de configuración ocupa `32 bytes` y ejecuta `check` en 0.016s.
-* **Invoke:** tarda 1.740s en instalarse mediante `pip`, ocupa 1.5M, su fichero ocupa `76 bytes` y ejecuta `check` en 0.127.
+* **Make:** viene preinstalado en el sistema (0s de instalación), su binario ocupa 254 KB, el Makefile de `check` ocupa 22 bytes y ejecuta la comprobación en 0.019s.
+* **Tusk:** tarda 5.582s en instalarse con `go install`, ocupa 7.9M, su fichero de configuración ocupa 44 bytes y ejecuta `check` en 0.019s.
+* **Robo:** tarda 4.226s en instalarse con `go install`, ocupa 5.6M, su fichero de configuración ocupa 32 bytes y ejecuta `check` en 0.016s.
+* **Invoke:** tarda 1.740s en instalarse mediante `pip`, ocupa 1.5M, su fichero ocupa 76 bytes y ejecuta `check` en 0.127s.
 
 *Decisión:* 
