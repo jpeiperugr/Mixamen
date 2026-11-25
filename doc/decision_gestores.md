@@ -31,4 +31,4 @@ Resultados de las pruebas:
 * **Robo:** tarda 4.226s en instalarse con `go install`, ocupa 5.6M, su fichero de configuración ocupa 32 bytes y ejecuta `check` en 0.016s.
 * **Invoke:** tarda 1.740s en instalarse mediante `pip`, ocupa 1.5M, su fichero ocupa 76 bytes y ejecuta `check` en 0.127s.
 
-*Decisión:* 
+*Decisión:* He elegido usar **Make** porque es la que mejor resultado obtiene en todo lo que ha sido evaluado menos en la ejecución del check en la cual gana Robo por 0.003s. He dudado con usar Robo por esto mismo pero creo que no merece la pena ya que en todo lo demás Make sale ganando y 0.003s no hace la diferencia como para elegir a Robo solo por ello.
