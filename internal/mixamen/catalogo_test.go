@@ -2,6 +2,7 @@ package mixamen
 
 import (
 	"errors"
+	"slices"
 	"testing"
 )
 
@@ -134,6 +135,49 @@ func TestCatalogarEjercicio(t *testing.T) {
 		err := cat.CatalogarEjercicio("Otro ejercicio", []string{"1.1"}, []string{"9.Z.9."})
 		if !errors.Is(err, ErrSaberNoEncontrado) {
 			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrSaberNoEncontrado, err)
+		}
+	})
+}
+
+func TestBuscarEjerciciosPorCriterio(t *testing.T) {
+	nuevoCatalogoConEjercicios := func(t *testing.T) *Catalogo {
+		t.Helper()
+		cat := NuevoCatalogo()
+		_ = cat.RegistrarCriterio("1.1", "Interpretar problemas")
+		_ = cat.RegistrarCriterio("2.1", "Comprobar soluciones")
+		_ = cat.RegistrarSaber("2.A.2.3.", "Números racionales")
+
+		_ = cat.CatalogarEjercicio("Ejercicio B", []string{"1.1"}, []string{"2.A.2.3."})
+		_ = cat.CatalogarEjercicio("Ejercicio A", []string{"1.1"}, []string{"2.A.2.3."})
+		_ = cat.CatalogarEjercicio("Ejercicio C", []string{"2.1"}, []string{"2.A.2.3."})
+		return cat
+	}
+
+	t.Run("devuelve ejercicios ordenados del criterio", func(t *testing.T) {
+		cat := nuevoCatalogoConEjercicios(t)
+		got, err := cat.BuscarEjerciciosPorCriterio("1.1")
+		if err != nil {
+			t.Fatalf("no se esperaba error, se obtuvo: %v", err)
+		}
+		want := []string{"Ejercicio A", "Ejercicio B"}
+		if !slices.Equal(got, want) {
+			t.Fatalf("se esperaba %v, se obtuvo %v", want, got)
+		}
+	})
+
+	t.Run("falla con codigo vacio", func(t *testing.T) {
+		cat := nuevoCatalogoConEjercicios(t)
+		_, err := cat.BuscarEjerciciosPorCriterio("   ")
+		if !errors.Is(err, ErrCodigoVacio) {
+			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrCodigoVacio, err)
+		}
+	})
+
+	t.Run("falla si el criterio no existe", func(t *testing.T) {
+		cat := nuevoCatalogoConEjercicios(t)
+		_, err := cat.BuscarEjerciciosPorCriterio("9.9")
+		if !errors.Is(err, ErrCriterioNoEncontrado) {
+			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrCriterioNoEncontrado, err)
 		}
 	})
 }

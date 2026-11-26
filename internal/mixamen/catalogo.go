@@ -2,6 +2,7 @@ package mixamen
 
 import (
 	"errors"
+	"slices"
 	"strings"
 )
 
@@ -88,6 +89,27 @@ func (c *Catalogo) CatalogarEjercicio(enunciado string, codigosCriterios, codigo
 
 	c.ejerciciosPorEnunciado[enunciado] = ejercicio
 	return nil
+}
+
+func (c *Catalogo) BuscarEjerciciosPorCriterio(codigo string) ([]string, error) {
+	codigo = strings.TrimSpace(codigo)
+	if codigo == "" {
+		return nil, ErrCodigoVacio
+	}
+
+	criterio, existe := c.buscarCriterio(codigo)
+	if !existe {
+		return nil, ErrCriterioNoEncontrado
+	}
+
+	var resultado []string
+	for enunciado, ej := range c.ejerciciosPorEnunciado {
+		if _, ok := ej.criterios[criterio]; ok {
+			resultado = append(resultado, enunciado)
+		}
+	}
+	slices.Sort(resultado)
+	return resultado, nil
 }
 
 func (c *Catalogo) buscarCriterio(codigo string) (criterioEvaluacion, bool) {
