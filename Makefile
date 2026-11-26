@@ -1,2 +1,2 @@
 check:
-	go vet ./...
+	gofmt -e . > /dev/null
