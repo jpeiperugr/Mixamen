@@ -39,3 +39,38 @@ func TestRegistrarCriterio(t *testing.T) {
 		}
 	})
 }
+
+func TestRegistrarSaber(t *testing.T) {
+	t.Run("registra saber basico valido", func(t *testing.T) {
+		cat := NuevoCatalogo()
+		err := cat.RegistrarSaber("2.A.2.3.", "Números enteros, fraccionarios, decimales y raíces")
+		if err != nil {
+			t.Fatalf("no se esperaba error, se obtuvo: %v", err)
+		}
+	})
+
+	t.Run("falla con codigo vacio", func(t *testing.T) {
+		cat := NuevoCatalogo()
+		err := cat.RegistrarSaber("", "Descripción válida")
+		if !errors.Is(err, ErrCodigoVacio) {
+			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrCodigoVacio, err)
+		}
+	})
+
+	t.Run("falla con descripcion vacia", func(t *testing.T) {
+		cat := NuevoCatalogo()
+		err := cat.RegistrarSaber("2.A.2.3.", "   ")
+		if !errors.Is(err, ErrDescripcionVacia) {
+			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrDescripcionVacia, err)
+		}
+	})
+
+	t.Run("falla con saber duplicado", func(t *testing.T) {
+		cat := NuevoCatalogo()
+		_ = cat.RegistrarSaber("2.A.2.3.", "Números enteros")
+		err := cat.RegistrarSaber("2.A.2.3.", "Duplicado")
+		if !errors.Is(err, ErrSaberDuplicado) {
+			t.Fatalf("se esperaba %v, se obtuvo: %v", ErrSaberDuplicado, err)
+		}
+	})
+}
