@@ -6,10 +6,15 @@ import (
 )
 
 var (
-	ErrCodigoVacio       = errors.New("el código no puede estar vacío")
-	ErrDescripcionVacia  = errors.New("la descripción no puede estar vacía")
-	ErrCriterioDuplicado = errors.New("el criterio de evaluación ya está registrado")
-	ErrSaberDuplicado    = errors.New("el saber básico ya está registrado")
+	ErrCodigoVacio                = errors.New("el código no puede estar vacío")
+	ErrDescripcionVacia           = errors.New("la descripción no puede estar vacía")
+	ErrCriterioDuplicado          = errors.New("el criterio de evaluación ya está registrado")
+	ErrCriterioNoEncontrado       = errors.New("el criterio de evaluación no existe en el catálogo")
+	ErrSaberDuplicado             = errors.New("el saber básico ya está registrado")
+	ErrSaberNoEncontrado          = errors.New("el saber básico no existe en el catálogo")
+	ErrEnunciadoVacio             = errors.New("el enunciado del ejercicio no puede estar vacío")
+	ErrEjercicioDuplicado         = errors.New("el ejercicio ya está catalogado")
+	ErrSinJustificacionCurricular = errors.New("el ejercicio debe tener al menos un criterio y un saber básico")
 )
 
 type Catalogo struct {
@@ -58,6 +63,33 @@ func (c *Catalogo) RegistrarSaber(codigo, descripcion string) error {
 	return nil
 }
 
+func (c *Catalogo) CatalogarEjercicio(enunciado string, codigosCriterios, codigosSaberes []string) error {
+	enunciado = strings.TrimSpace(enunciado)
+	if enunciado == "" {
+		return ErrEnunciadoVacio
+	}
+	if _, existe := c.ejerciciosPorEnunciado[enunciado]; existe {
+		return ErrEjercicioDuplicado
+	}
+
+	criterios, err := c.resolverCriterios(codigosCriterios)
+	if err != nil {
+		return err
+	}
+	saberes, err := c.resolverSaberes(codigosSaberes)
+	if err != nil {
+		return err
+	}
+
+	ejercicio, err := nuevoEjercicioMatematico(criterios, saberes)
+	if err != nil {
+		return err
+	}
+
+	c.ejerciciosPorEnunciado[enunciado] = ejercicio
+	return nil
+}
+
 func (c *Catalogo) buscarCriterio(codigo string) (criterioEvaluacion, bool) {
 	for crit := range c.criterios {
 		if crit.codigo == codigo {
@@ -74,4 +106,28 @@ func (c *Catalogo) buscarSaber(codigo string) (saberBasico, bool) {
 		}
 	}
 	return saberBasico{}, false
+}
+
+func (c *Catalogo) resolverCriterios(codigos []string) ([]criterioEvaluacion, error) {
+	res := make([]criterioEvaluacion, 0, len(codigos))
+	for _, cod := range codigos {
+		crit, ok := c.buscarCriterio(strings.TrimSpace(cod))
+		if !ok {
+			return nil, ErrCriterioNoEncontrado
+		}
+		res = append(res, crit)
+	}
+	return res, nil
+}
+
+func (c *Catalogo) resolverSaberes(codigos []string) ([]saberBasico, error) {
+	res := make([]saberBasico, 0, len(codigos))
+	for _, cod := range codigos {
+		sab, ok := c.buscarSaber(strings.TrimSpace(cod))
+		if !ok {
+			return nil, ErrSaberNoEncontrado
+		}
+		res = append(res, sab)
+	}
+	return res, nil
 }
