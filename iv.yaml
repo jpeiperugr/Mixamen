@@ -3,3 +3,4 @@ entidad: internal/mixamen/catalogo.go
 automatizar:
   fichero: Makefile
   orden: make
+test: internal/mixamen/catalogo_test.go
