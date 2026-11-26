@@ -1,2 +1,5 @@
 check:
-	go vet ./...
+	gofmt -e . > /dev/null
+
+test:
+	go test -v ./...
