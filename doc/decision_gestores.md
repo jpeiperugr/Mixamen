@@ -4,31 +4,30 @@ En Go, el gestor de dependencias estándar y nativo es `go mod`. Al ser el está
 
 Para elegir el gestor de tareas del proyecto he evaluado cuatro alternativas: **Make** (estándar POSIX), **Tusk** (YAML escrito en Go), **Robo** (YAML escrito en Go) e **Invoke** (gestor de tareas en Python). Los criterios objetivos medidos son:
 
-- Tiempo de instalación usando el instalador binario oficial más rápido disponible.
-- Tiempo de arranque y gestión al lanzar la misma tarea `check` ejecutando `go build ./...` en la raíz del proyecto.
-- Tamaño del binario instalado en disco.
-- Tamaño del fichero de configuración mínimo para definir la misma tarea.
+- Tiempo de instalación usando el método oficial más directo en Linux (en un entorno Go).
+- Tiempo de arranque y ejecución al lanzar la misma tarea `check` ejecutando `go vet ./...` en la raíz del proyecto.
 
 ## Pruebas objetivas
 
 En primer lugar, he medido el tiempo que tarda cada herramienta en instalarse en el sistema mediante `time`:
 
 ![Medición de instalación](../media/tInstalacion.png)
+![Medición de instalación invoke + pip](../media/tInstalacion_invokePip.png)
 
 Make es el único que no tiene captura ya que viene preinstalado en Linux.
 
-A continuación, he lanzado `time <herramienta> check` ejecutando `go build ./...`:
-
-![Tamaño de las herramientas](../media/tam_herramientas.png)
-![Tamaño invoke](../media/tam_invoke.png)
+A continuación, he lanzado `time <herramienta> check` ejecutando `go vet ./...`:
 
 ![Tiempo de ejecución](../media/tEjecucion.png)
+![Tiempo de ejecución de make](../media/tEjecucion_make.png)
+
+He ejecutado dos veces make, ya que en la primera cuenta con la desventaja de ser el primero en ejecutarse y por lo tanto no disponía de información en la caché de Go, es por eso que tarda más en la primera ejecución.
 
 Resultados de las pruebas:
 
-* **Make:** viene preinstalado en el sistema (0s de instalación), su binario ocupa 254 KB, el Makefile de `check` ocupa 22 bytes y ejecuta la comprobación en 0.019s.
-* **Tusk:** tarda 5.582s en instalarse con `go install`, ocupa 7.9M, su fichero de configuración ocupa 44 bytes y ejecuta `check` en 0.019s.
-* **Robo:** tarda 4.226s en instalarse con `go install`, ocupa 5.6M, su fichero de configuración ocupa 32 bytes y ejecuta `check` en 0.016s.
-* **Invoke:** tarda 1.740s en instalarse mediante `pip`, ocupa 1.5M, su fichero ocupa 76 bytes y ejecuta `check` en 0.127s.
+* **Make:** viene preinstalado en el sistema (0s de instalación) y ejecuta `check` en 0.039s.
+* **Tusk:** tarda 5.582s en instalarse con `go install` y ejecuta `check` en 0.050s.
+* **Robo:** tarda 4.226s en instalarse con `go install` y ejecuta `check` en 0.052s.
+* **Invoke:** tarda 1.943s en instalarse `pip` y la herramienta, y ejecuta `check` en 0.152s.
 
-*Decisión:* He elegido usar **Make** porque es la que mejor resultado obtiene en todo lo que ha sido evaluado menos en la ejecución del check en la cual gana Robo por 0.003s. He dudado con usar Robo por esto mismo pero creo que no merece la pena ya que en todo lo demás Make sale ganando y 0.003s no hace la diferencia como para elegir a Robo solo por ello.
+*Decisión:* 
